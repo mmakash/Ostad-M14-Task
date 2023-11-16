@@ -1,10 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import TeamPage from './pages/TeamPage';
+import ServicePage from './pages/ServicePage';
+import ProjectPage from './pages/ProjectPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/team' element={<TeamPage/>}/>
+        <Route path='/service' element={<ServicePage/>}/>
+        <Route path='/project' element={<ProjectPage/>}/>
+        <Route path='/testimonials' element={<TestimonialsPage/>}/>
+      </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 
